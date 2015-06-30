@@ -107,3 +107,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Admin email id to sent email like archives.
+ADMINS = [
+	('Archive', 'archive@sgadesignlab.com')
+]
+
+# Mandrill settings
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.mandrillapp.com'
+EMAIL_HOST_USER = config.get('default_email', 'EMAIL_USERNAME')
+EMAIL_HOST_PASSWORD = config.get('default_email', 'EMAIL_PASSWORD')
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = 'support@sgadesignlab.com'
+DEFAULT_FROM_NAME = 'Sgadesignlab'
